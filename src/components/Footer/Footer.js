@@ -32,25 +32,15 @@ export default function Footer(props) {
         <div className={classes.left}>
           <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
-              <a>
-                +216 94103403 + 216 75276828 <br/> Résidence Chadha Azhar, Rue Yahya
-                Ben Tamim, Soukra, Ariana, Tunisie.{" "}
-              </a>
+              <>
+                +216 94103403 + 216 75276828 <br /> Résidence Chadha Azhar, Rue
+                Yahya Ben Tamim, Soukra, Ariana, Tunisie.{" "}
+              </>
             </ListItem>
-           
           </List>
         </div>
         <div className={classes.right}>
-          &copy; {1900 + new Date().getYear()} , made with{" "}
-          <Favorite className={classes.icon} /> by{" "}
-          <a
-            href="https://www.creative-tim.com?ref=mkr-footer"
-            className={aClasses}
-            target="_blank"
-          >
-            Zgaya Safa
-          </a>{" "}
-          for a better web.
+          &copy; {1900 + new Date().getYear()} , contact@sesameac.com
         </div>
       </div>
     </footer>

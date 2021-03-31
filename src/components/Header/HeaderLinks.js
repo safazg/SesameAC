@@ -1,7 +1,5 @@
 /*eslint-disable*/
 import React from "react";
-import DeleteIcon from "@material-ui/icons/Delete";
-import IconButton from "@material-ui/core/IconButton";
 // react components for routing our app without refresh
 import { Link } from "react-router-dom";
 
@@ -9,7 +7,6 @@ import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import Tooltip from "@material-ui/core/Tooltip";
 
 // @material-ui/icons
 import {
@@ -20,72 +17,92 @@ import {
   Contacts,
   ContactSupport,
   EmojiFlags,
+  Translate,
 } from "@material-ui/icons";
 
 // core components
-import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
 import Button from "components/CustomButtons/Button.js";
 
 import styles from "assets/jss/material-kit-react/components/headerLinksStyle.js";
 
+//Translation
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+
 const useStyles = makeStyles(styles);
 
 export default function HeaderLinks(props) {
+  const dispatch = useDispatch();
+  const language = useSelector((state) => state.language);
   const classes = useStyles();
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
-        
+        <Link to="/" style={{ color: "inherit" }}>
           <Button
             color="transparent"
             target="_blank"
             className={classes.navLink}
           >
-            <Link to="/">
-            <Home className={classes.icons} /> HOME
-            </Link>
+            <Home className={classes.icons} />{" "}
+            {language === "an" ? "HOME" : "ACCEUIL"}
           </Button>
-        
+        </Link>
       </ListItem>
       {/*        */}
       <ListItem className={classes.listItem}>
-        <Button color="transparent" target="_blank" className={classes.navLink}>
-          <Info className={classes.icons} /> INFORMATION
-        </Button>
+        <Link to="/info-page" style={{ color: "inherit" }}>
+          <Button
+            color="transparent"
+            target="_blank"
+            className={classes.navLink}
+          >
+            <Info className={classes.icons} /> INFORMATION
+          </Button>
+        </Link>
       </ListItem>
       {/*        */}
+
       <ListItem className={classes.listItem}>
-        <Button color="transparent" target="_blank" className={classes.navLink}>
-          <LocalOffer className={classes.icons} /> OFFERS
-        </Button>
-      </ListItem>
-      {/*        */}
-      <ListItem className={classes.listItem}>
-        <Button color="transparent" target="_blank" className={classes.navLink}>
-          <EmojiFlags className={classes.icons} /> PARTNERS
-        </Button>
+        <Link to="/partners-page" style={{ color: "inherit" }}>
+          <Button
+            color="transparent"
+            target="_blank"
+            className={classes.navLink}
+          >
+            <EmojiFlags className={classes.icons} />
+            {language === "an" ? "PARTNERS" : "PARTENAIRES"}
+          </Button>
+        </Link>
       </ListItem>{" "}
       {/*        */}
-      <ListItem className={classes.listItem}>
-        <Link to="/profile-page">
+      <ListItem className={classes.listItem} style={{ color: "inherit" }}>
+        <Link to="/profile-page" style={{ color: "inherit" }}>
           <Button
             color="transparent"
             target="_blank"
             className={classes.navLink}
           >
-            <Contacts className={classes.icons} /> AGENTS
+            <Contacts className={classes.icons} />
+            {language === "an" ? "AGENTS" : "ÉQUIPE"}
           </Button>
         </Link>
       </ListItem>{" "}
       {/*        */}
       <ListItem className={classes.listItem}>
-        <Button color="transparent" target="_blank" className={classes.navLink}>
-          <ContactSupport className={classes.icons} /> FAQ
-        </Button>
+        <Link to="/faq" style={{ color: "inherit" }}>
+          <Button
+            color="transparent"
+            target="_blank"
+            className={classes.navLink}
+          >
+            <ContactSupport className={classes.icons} /> FAQ
+          </Button>
+        </Link>
       </ListItem>{" "}
       {/*        */}
       <ListItem className={classes.listItem}>
-        <Link to="/landing-page">
+        <Link to="/landing-page" style={{ color: "inherit" }}>
           <Button
             color="transparent"
             target="_blank"
@@ -94,6 +111,22 @@ export default function HeaderLinks(props) {
             <Mail className={classes.icons} /> CONTACT
           </Button>
         </Link>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Button
+          onClick={() =>
+            language === "an"
+              ? dispatch({ type: "fr" })
+              : dispatch({ type: "an" })
+          }
+          color="transparent"
+          target="_blank"
+          className={classes.navLink}
+        >
+          <Translate className={classes.icons} />
+
+          {language === "an" ? "FR" : "ANG"}
+        </Button>
       </ListItem>
     </List>
   );

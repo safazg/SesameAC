@@ -23,10 +23,10 @@ export default function SectionCarousel() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
   };
   return (
     <div className={classes.section}>
@@ -38,7 +38,8 @@ export default function SectionCarousel() {
                 <div>
                   <img src={image1} alt="First slide" className="slick-image" />
                   <div className="slick-caption">
-                    <h4>
+                    <h4 style={{ position: "absolute",
+    paddingTop: "inherit"}}>
                       <LocationOn className="slick-icons" />
                       Résidence Chadha Azhar, Rue Yahya Ben Tamim, Soukra,
                       Tunisie
