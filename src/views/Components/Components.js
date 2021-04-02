@@ -1,8 +1,6 @@
 import React from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
-// react components for routing our app without refresh
-import { Link, Route, Switch } from "react-router-dom";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
@@ -21,7 +19,6 @@ import SectionCarousel from "./Sections/SectionCarousel.js";
 import styles from "assets/jss/material-kit-react/views/components.js";
 
 import logo from "../../assets/img/default-white.png";
-import "./Components.css";
 
 const useStyles = makeStyles(styles);
 
