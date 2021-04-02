@@ -20,7 +20,7 @@ import { useSelector } from "react-redux";
 const useStyles = makeStyles(styles);
 
 export default function WorkSection() {
-  init("user_pJYgXaFKo4OEyOoThwGs2");
+  init("user_cEBR1bdP4kWTt8KXUvCSl");
   //Translation
   const dispatch = useDispatch();
   const language = useSelector((state) => state.language);
@@ -55,7 +55,7 @@ export default function WorkSection() {
       setEmailErr(true);
     } else {
       emailjs
-        .send("service_3frqhxl", "template_1mxpmyi", { name, email, message })
+        .send("service_b79l5mw", "template_buwcccb", { name, email, message })
         .then(
           function (response) {
             console.log("SUCCESS!", response.status, response.text);

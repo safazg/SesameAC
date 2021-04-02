@@ -4,10 +4,6 @@ import classNames from "classnames";
 // @material-ui/icons
 import LibraryBooks from "@material-ui/icons/LibraryBooks";
 import Close from "@material-ui/icons/Close";
-// @material-ui/icons
-import Chat from "@material-ui/icons/Chat";
-import VerifiedUser from "@material-ui/icons/VerifiedUser";
-import Fingerprint from "@material-ui/icons/Fingerprint";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 // core components
@@ -27,8 +23,6 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogActions from "@material-ui/core/DialogActions";
 
 import styles from "assets/jss/material-kit-react/views/infoPage";
-//
-import InfoArea from "components/InfoArea/InfoArea.js";
 
 //Translation
 import { useDispatch } from "react-redux";
@@ -40,8 +34,9 @@ import info2 from "assets/img/info2.jpg";
 import info3 from "assets/img/info3.jpg";
 import info4 from "assets/img/info4.jpg";
 import info5 from "assets/img/info5.jpg";
-import helpline from "assets/img/helpline.jpg";
-import service from "assets/img/service.jpg";
+
+//CSS
+import SectionCard from "./SectionCard";
 
 const dashboardRoutes = [];
 
@@ -165,70 +160,55 @@ export default function InfoPage(props) {
                 >
                   <img
                     style={{
-                      webkitTransform: "rotate(10deg) scale(1.25)",
-                      transform: "rotate(10deg) scale(1.25)",
-                      webkitTransition: ".3s ease-in-out",
-                      transition: ".3s ease-in-out",
-                      ":hover": {
-                        webkitTransform: "rotate(0) scale(1)",
-                        transform: "rotate(0) scale(1)",
-                      },
+                      // webkitTransform: "rotate(10deg) scale(1.25)",
+                      // transform: "rotate(10deg) scale(1.25)",
+                      // webkitTransition: ".3s ease-in-out",
+                      // transition: ".3s ease-in-out",
+
                       width: "250px",
                     }}
                     src={info1}
                   ></img>
                   <img
                     style={{
-                      webkitTransform: "rotate(10deg) scale(1.25)",
-                      transform: "rotate(10deg) scale(1.25)",
-                      webkitTransition: ".3s ease-in-out",
-                      transition: ".3s ease-in-out",
-                      ":hover": {
-                        webkitTransform: "rotate(0) scale(1)",
-                        transform: "rotate(0) scale(1)",
-                      },
+                      // webkitTransform: "rotate(10deg) scale(1.25)",
+                      // transform: "rotate(10deg) scale(1.25)",
+                      // webkitTransition: ".3s ease-in-out",
+                      // transition: ".3s ease-in-out",
+
                       width: "250px",
                     }}
                     src={info2}
                   ></img>
                   <img
                     style={{
-                      webkitTransform: "rotate(10deg) scale(1.25)",
-                      transform: "rotate(10deg) scale(1.25)",
-                      webkitTransition: ".3s ease-in-out",
-                      transition: ".3s ease-in-out",
-                      ":hover": {
-                        webkitTransform: "rotate(0) scale(1)",
-                        transform: "rotate(0) scale(1)",
-                      },
+                      // webkitTransform: "rotate(10deg) scale(1.25)",
+                      // transform: "rotate(10deg) scale(1.25)",
+                      // webkitTransition: ".3s ease-in-out",
+                      // transition: ".3s ease-in-out",
+
                       width: "250px",
                     }}
                     src={info3}
                   ></img>
                   <img
                     style={{
-                      webkitTransform: "rotate(10deg) scale(1.25)",
-                      transform: "rotate(10deg) scale(1.25)",
-                      webkitTransition: ".3s ease-in-out",
-                      transition: ".3s ease-in-out",
-                      ":hover": {
-                        webkitTransform: "rotate(0) scale(1)",
-                        transform: "rotate(0) scale(1)",
-                      },
+                      // webkitTransform: "rotate(10deg) scale(1.25)",
+                      // transform: "rotate(10deg) scale(1.25)",
+                      // webkitTransition: ".3s ease-in-out",
+                      // transition: ".3s ease-in-out",
+
                       width: "250px",
                     }}
                     src={info4}
                   ></img>
                   <img
                     style={{
-                      webkitTransform: "rotate(10deg) scale(1.25)",
-                      transform: "rotate(10deg) scale(1.25)",
-                      webkitTransition: ".3s ease-in-out",
-                      transition: ".3s ease-in-out",
-                      ":hover": {
-                        webkitTransform: "rotate(0) scale(1)",
-                        transform: "rotate(0) scale(1)",
-                      },
+                      // webkitTransform: "rotate(10deg) scale(1.25)",
+                      // transform: "rotate(10deg) scale(1.25)",
+                      // webkitTransition: ".3s ease-in-out",
+                      // transition: ".3s ease-in-out",
+
                       width: "250px",
                     }}
                     src={info5}
@@ -295,43 +275,22 @@ export default function InfoPage(props) {
           <GridContainer justify="center">
             <GridItem xs={12} sm={12} md={8}>
               <h1 style={{ textAlign: "center" }} className={classes.title}>
-                WHY CHOOSE US?
+                {language === "an"
+                  ? "WHY CHOOSE US?"
+                  : "POURQUOI NOUS CHOISIR?"}
               </h1>
               <h5
                 style={{ textAlign: "center" }}
                 className={classes.description}
               >
-                Thanks to the outstanding expertise of its managers, Sesame will
-                be your best option for the highest quality representation in
-                the region.
+                {language === "an"
+                  ? " Thanks to the outstanding expertise of its managers, Sesame will be your best option for the highest quality representation in the region."
+                  : "Grâce à l’expertise exceptionnelle de ses gestionnaires, Sésame sera votre meilleure option pour la représentation de la plus haute qualité dans la région."}
               </h5>
             </GridItem>
           </GridContainer>
-          <div style={{ placeContent: "center" }}>
-            <GridContainer
-              style={{ textAlign: "center", placeContent: "center" }}
-            >
-              <GridItem xs={12} sm={12} md={4}>
-                <InfoArea
-                  title="Free Chat"
-                  description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
-                  icon={Chat}
-                  iconColor="info"
-                  vertical
-                />
-              </GridItem>
-              <GridItem xs={12} sm={12} md={4}>
-                <InfoArea
-                  title="Verified Users"
-                  description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
-                  icon={VerifiedUser}
-                  iconColor="success"
-                  vertical
-                />
-              </GridItem>
-            </GridContainer>
-          </div>
         </div>
+        <SectionCard />
       </div>
       <Footer />
     </div>

@@ -38,8 +38,7 @@ export default function SectionCarousel() {
                 <div>
                   <img src={image1} alt="First slide" className="slick-image" />
                   <div className="slick-caption">
-                    <h4 style={{ position: "absolute",
-    paddingTop: "inherit"}}>
+                    <h4 style={{ position: "absolute", paddingTop: "15%" }}>
                       <LocationOn className="slick-icons" />
                       Résidence Chadha Azhar, Rue Yahya Ben Tamim, Soukra,
                       Tunisie
@@ -53,7 +52,7 @@ export default function SectionCarousel() {
                     className="slick-image"
                   />
                   <div className="slick-caption">
-                    <h4>
+                    <h4 style={{  paddingTop: "15%" }}>
                       <LocationOn className="slick-icons" />
                       Résidence Chadha Azhar, Rue Yahya Ben Tamim, Soukra,
                       Tunisie
@@ -62,13 +61,7 @@ export default function SectionCarousel() {
                 </div>
                 <div>
                   <img src={image3} alt="Third slide" className="slick-image" />
-                  <div className="slick-caption">
-                    <h4>
-                      <LocationOn className="slick-icons" />
-                      Résidence Chadha Azhar, Rue Yahya Ben Tamim, Soukra,
-                      Tunisie
-                    </h4>
-                  </div>
+                 
                 </div>
               </Carousel>
             </Card>

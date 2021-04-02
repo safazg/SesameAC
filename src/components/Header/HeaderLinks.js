@@ -62,7 +62,6 @@ export default function HeaderLinks(props) {
         </Link>
       </ListItem>
       {/*        */}
-
       <ListItem className={classes.listItem}>
         <Link to="/partners-page" style={{ color: "inherit" }}>
           <Button
@@ -125,7 +124,7 @@ export default function HeaderLinks(props) {
         >
           <Translate className={classes.icons} />
 
-          {language === "an" ? "FR" : "ANG"}
+          {language === "an" ? "FR" : "EN"}
         </Button>
       </ListItem>
     </List>
